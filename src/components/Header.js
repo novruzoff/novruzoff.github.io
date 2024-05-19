@@ -1,9 +1,12 @@
 import React from 'react';
 import './Header.css';
+import logo from '../assets/MN_Logo.png';
 
 const Header = () => (
   <header>
-    <h1>Murad Novruzov</h1>
+    <div className="logo">
+      <img src={logo} alt="Murad Novruzov Logo" />
+    </div>
     <nav>
       <a href="#hero">Home</a>
       <a href="#projects">Projects</a>

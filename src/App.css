@@ -1,14 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background-color: #121212;
   color: #ffffff;
 }
 
 .App {
   text-align: center;
+  background-color: #121212; /* Dark background */
 }
 
 header {
@@ -19,9 +20,8 @@ header {
   background-color: #1f1f1f;
 }
 
-header h1 {
-  font-size: 1.5rem;
-  color: #ffffff;
+header .logo img {
+  height: 40px;
 }
 
 header nav {
@@ -36,20 +36,30 @@ header nav a {
 }
 
 #hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background: linear-gradient(135deg, #6a11cb, #2575fc);
-  padding: 4rem 1rem;
-  text-align: center;
+  border-radius: 15px; /* Rounded corners */
+  margin: 2rem auto;
+  padding: 4rem 2rem;
+  width: 80%;
+  max-width: 800px;
+  background-color: #1f1f1f; /* Dark background */
 }
 
 .hero-content h1 {
   font-size: 3rem;
   margin: 0;
   font-weight: 700;
+  color: #ffffff;
 }
 
 .hero-content p {
   font-size: 1.2rem;
   margin: 0.5rem 0;
+  color: #ffffff;
 }
 
 .btn-cv {
@@ -65,11 +75,14 @@ header nav a {
 
 #about {
   padding: 2rem 1rem;
+  background-color: #121212; /* Dark background */
+  color: #ffffff;
 }
 
 h2 {
   font-size: 2rem;
   font-weight: 700;
+  color: #ffffff;
 }
 
 footer {
@@ -91,4 +104,33 @@ footer a {
   text-decoration: none;
   font-weight: 700;
   margin: 0 0.5rem;
+}
+
+#projects {
+  padding: 2rem 1rem;
+  background-color: #121212; /* Dark background */
+}
+
+.project {
+  background-color: #1f1f1f;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.project h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.project p {
+  font-size: 1rem;
+  color: #bbbbbb;
+}
+
+.project a {
+  color: #2575fc;
+  text-decoration: none;
+  font-weight: 700;
 }

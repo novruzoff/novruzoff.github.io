@@ -9,7 +9,8 @@ module.exports = (env, argv) => {
     entry: './src/index.js',
     output: {
       path: path.resolve(__dirname, 'dist'),
-      filename: isProduction ? '[name].[contenthash].js' : '[name].bundle.js', // Use contenthash for production builds
+      filename: isProduction ? '[name].[contenthash].js' : '[name].bundle.js',
+      publicPath: '/',
     },
     module: {
       rules: [
@@ -21,6 +22,18 @@ module.exports = (env, argv) => {
         {
           test: /\.css$/,
           use: ['style-loader', 'css-loader'],
+        },
+        {
+          test: /\.(png|jpe?g|gif|svg)$/,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: '[name].[hash].[ext]',
+                outputPath: 'assets/images',
+              },
+            },
+          ],
         },
       ],
     },
@@ -43,6 +56,7 @@ module.exports = (env, argv) => {
       compress: true,
       port: 9000,
       open: true,
+      historyApiFallback: true,
     },
     optimization: {
       splitChunks: {
