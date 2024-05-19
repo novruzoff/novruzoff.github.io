@@ -1,0 +1,39 @@
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+module.exports = {
+  entry: './src/index.js',  // Entry point for your application
+  output: {
+    path: path.resolve(__dirname, 'dist'),  // Output directory
+    filename: 'bundle.js',  // Output file name
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,  // Transpile .js and .jsx files
+        exclude: /node_modules/,
+        use: 'babel-loader',
+      },
+      {
+        test: /\.css$/,  // Process CSS files
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],  // Resolve these extensions
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './public/index.html',  // HTML template file
+    }),
+  ],
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'public'),  // Serve static files from public directory
+    },
+    compress: true,  // Enable gzip compression
+    port: 9000,  // Development server port
+    open: true,  // Automatically open the browser
+  },
+};
