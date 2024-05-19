@@ -2,27 +2,34 @@ import React from 'react';
 import './App.css';
 import Header from './components/Header';
 import Project from './components/Project';
-import Footer from './components/Footer';
+import profileImage from './assets/MN_Logo.png'; // Add a profile image
 
 const App = () => (
   <div className="App">
     <Header />
     <main>
-      <section id="hero">
-        <div className="hero-content">
+      <section id="home">
+        <div className="home-content">
           <h1>Murad Novruzov</h1>
           <p>Full-Stack Developer</p>
-          <p>I am a student at McGill University, studying Computer Science.</p>
           <button className="btn-cv">Download CV</button>
+        </div>
+        <div className="home-image">
+          <img src={profileImage} alt="Profile" />
         </div>
       </section>
       <section id="about">
         <h2>About Me</h2>
-        <p>Introduce yourself here. Mention your interests, background, and any other information you want to share.</p>
+        <p>My name is Murad Novruzov, from Azerbaijan. 
+          I am a student at McGill University, majoring in Computer Science and minoring in Management.
+          I am interested in  Software Engineering and Artificial Intelligence.
+          My skills involve both front-end and back-end knowledge.</p>
       </section>
-      <Project />
+      <section id="projects">
+        <h2>Projects</h2>
+        <Project />
+      </section>
     </main>
-    <Footer />
   </div>
 );
 
