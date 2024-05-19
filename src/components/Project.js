@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
+
+const ProjectDetails = lazy(() => import('./ProjectDetails'));
 
 const Project = () => {
   return (
@@ -7,7 +9,10 @@ const Project = () => {
       <div className="project">
         <h3>Project Title</h3>
         <p>Project description goes here.</p>
-        <a href="https://github.com/novruzoff/project-repo" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+        <Suspense fallback={<div>Loading...</div>}>
+          <ProjectDetails />
+        </Suspense>
+        <a href="https://github.com/novruzoff/novruzoff.github.io" target="_blank" rel="noopener noreferrer">View on GitHub</a>
       </div>
     </section>
   );
