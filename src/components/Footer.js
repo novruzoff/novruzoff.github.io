@@ -1,13 +1,11 @@
 import React from 'react';
+import './Footer.css';
 
-const Footer = () => {
-  return (
-    <footer>
-      <p>© 2024 Novruzoff</p>
-      <a href="https://github.com/novruzoff" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="https://www.linkedin.com/in/novruzovmurad" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-    </footer>
-  );
-};
+const Footer = () => (
+  <footer>
+    <p>© 2024 Murad Novruzov</p>
+    <a href="https://github.com/novruzoff" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </footer>
+);
 
 export default Footer;

@@ -1,0 +1,21 @@
+footer {
+    background-color: #1f1f1f;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  
+  footer div {
+    margin-top: 0.5rem;
+  }
+  
+  footer a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    margin: 0 0.5rem;
+  }
+  
