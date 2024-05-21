@@ -1,0 +1,31 @@
+/* src/components/Contact.css */
+#contact {
+    padding: 4rem 1rem;
+    color: #ffffff;
+    text-align: left;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    text-align: center; /* Center-align titles */
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin: 0.5rem 0;
+  }
+  
+  p {
+    font-size: 1.1rem;
+    color: #c9c9c9;
+  }
+  

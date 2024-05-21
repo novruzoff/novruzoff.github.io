@@ -1,17 +1,18 @@
 // src/components/Header.js
 import React from 'react';
 import './Header.css';
+import { Link } from 'react-router-dom';
 import logo from '../assets/MN_Logo.png';
 
 const Header = () => (
   <header>
     <div className="logo">
-      <a href="#home"><img src={logo} alt="Murad Novruzov Logo" /></a>
+      <Link to="/"><img src={logo} alt="Murad Novruzov Logo" /></Link>
     </div>
     <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+      <Link to="/about">About</Link>
+      <Link to="/projects">Projects</Link>
+      <Link to="/contact">Contact</Link>
     </nav>
   </header>
 );
