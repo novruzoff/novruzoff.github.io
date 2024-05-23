@@ -1,5 +1,6 @@
 // src/components/Home.js
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Home.css';
 import profileImage from '../assets/MN_Logo.png';
 
@@ -20,9 +21,9 @@ const SectionLink = ({ id, title, description }) => (
   <div className="section-link">
     <h2>{title}</h2>
     <p>{description}</p>
-    <a className="btn-more" href={`/${id}`}>
+    <Link className="btn-more" to={`/${id}`}>
       Learn More
-    </a>
+    </Link>
   </div>
 );
 
