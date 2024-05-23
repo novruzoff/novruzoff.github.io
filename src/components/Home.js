@@ -8,7 +8,7 @@ const Home = () => (
     <div className="home-content">
       <h1>Murad Novruzov</h1>
       <p>Full-Stack Developer</p>
-      <a href="/CV.pdf" className="btn-cv" download="CV.pdf">Download CV</a>
+      <a href="./CV.pdf" className="btn-cv" download>Download CV</a>
     </div>
     <div className="home-image">
       <img src={profileImage} alt="Profile" />
