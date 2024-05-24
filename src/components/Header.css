@@ -1,4 +1,5 @@
 /* src/components/Header.css */
+
 header {
   display: flex;
   justify-content: space-between;
@@ -19,6 +20,11 @@ header .logo {
 
 header .logo img {
   height: 50px;
+  transition: transform 0.3s; /* Add transition for magnifying effect */
+}
+
+header .logo img:hover {
+  transform: scale(1.2); /* Magnify on hover */
 }
 
 header nav {
@@ -32,11 +38,18 @@ header nav a {
   font-weight: 700;
   padding: 0.5rem 1rem;
   border-radius: 7px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s; /* Add transition for magnifying effect */
 }
 
 header nav a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  text-decoration: none;
-  border-radius: 7px;
+  transform: scale(1.2); /* Magnify on hover */
+}
+
+header nav a.active {
+  color: #ffffff; /* Highlight color for the active link */
+  text-decoration: underline; /* Underline the active link */
+}
+
+header nav a:not(.active) {
+  color: #cacaca; /* Slightly gray color for inactive links */
 }

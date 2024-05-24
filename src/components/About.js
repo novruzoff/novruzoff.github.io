@@ -33,6 +33,9 @@ const About = () => (
         </ul>
       </div>
     </section>
+    <div className="footer-text">
+      <p>© 2024 - Murad Novruzov</p>
+    </div>
   </main>
 );
 
