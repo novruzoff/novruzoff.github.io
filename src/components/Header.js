@@ -34,7 +34,7 @@ const Header = () => {
       <nav>
         <Link to="/about" className={location.pathname === '/about' ? 'active' : ''}>About</Link>
         <Link to="/projects" className={location.pathname === '/projects' ? 'active' : ''}>Projects</Link>
-        <a href={`${process.env.PUBLIC_URL}/CV.pdf`} target="_blank" rel="noopener noreferrer">Resume</a>
+        <a href="https://raw.githubusercontent.com/novruzoff/novruzoff.github.io/master/public/CV.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
       </nav>
     </header>
   );
