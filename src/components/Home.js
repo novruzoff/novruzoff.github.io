@@ -12,7 +12,7 @@ const Home = () => (
   <section id="home">
     <div className="home-content">
       <h1>Murad Novruzov</h1>
-      <p>Full-Stack Developer</p>
+      <p>Computer Science Student</p>
       <div className="social-icons">
         <a href="https://instagram.com/novruzoffmurad" target="_blank" rel="noopener noreferrer">
           <img src={instagramIcon} alt="Instagram" />
@@ -52,7 +52,7 @@ const HomePage = () => (
       <SectionLink
         id="about"
         title="About me"
-        description="My name is Murad Novruzov, an Azerbaijani Computer Science student at McGill University with a passion for Software Engineering and AI, proficient in both front-end and back-end development."
+        description="My name is Murad Novruzov - an Azerbaijani Computer Science student at McGill University based in Montreal, Canada. I have a passion for Software Engineering and AI, proficient in both front-end and back-end development."
       />
       <SectionLink
         id="projects"
