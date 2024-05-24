@@ -1,25 +1,5 @@
 /* src/components/Header.css */
 
-@keyframes slideDown {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 header {
   display: flex;
   justify-content: space-between;
@@ -31,7 +11,6 @@ header {
   top: 0;
   z-index: 10;
   transition: transform 0.3s ease-in-out; /* Add transition for smooth hiding/showing */
-  animation: slideDown 1s ease-in-out; /* Add slide down animation */
 }
 
 header.hidden {
@@ -46,7 +25,6 @@ header .logo {
   display: flex;
   align-items: center;
   margin-left: 2rem; /* Add margin to move it right */
-  animation: fadeIn 1s ease-in-out 0.5s both; /* Add fade-in animation with delay */
 }
 
 header .logo img {
@@ -61,7 +39,6 @@ header .logo img:hover {
 header nav {
   display: flex;
   gap: 1.5rem;
-  animation: fadeIn 1s ease-in-out 0.5s both; /* Add fade-in animation with delay */
 }
 
 header nav a {
@@ -74,10 +51,8 @@ header nav a {
 }
 
 header nav a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  text-decoration: none;
-  border-radius: 7px;
   transform: scale(1.2); /* Magnify on hover */
+  text-decoration: none;
 }
 
 header nav a.active {
@@ -86,9 +61,5 @@ header nav a.active {
 }
 
 header nav a:not(.active) {
-  color: #bbbbbb; /* Slightly gray color for inactive links */
-}
-
-header nav a.resume-link {
-  color: #00aaff; /* Optional: different color for the resume link */
+  color: #cecece; /* Slightly gray color for inactive links */
 }

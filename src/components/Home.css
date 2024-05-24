@@ -1,14 +1,5 @@
 /* src/components/Home.css */
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 #home {
   display: flex;
   justify-content: space-between;
@@ -20,7 +11,6 @@
   height: 100vh;
   box-sizing: border-box;
   background: inherit; /* Ensure main content inherits the background */
-  animation: fadeIn 1.5s ease-in-out; /* Add fade-in animation */
 }
 
 .home-content {
@@ -28,7 +18,6 @@
   padding: 2rem;
   text-align: center; /* Center-align title */
   max-width: 400px;
-  animation: fadeIn 2s ease-in-out 0.5s both; /* Add fade-in animation with delay */
 }
 
 .home-content h1 {
@@ -61,14 +50,13 @@
 }
 
 .social-icons img:hover {
-  transform: scale(1.2); /* Slightly enlarge the icon on hover */
+  transform: scale(1.15); /* Slightly enlarge the icon on hover */
 }
 
 .home-image {
   flex: 1;
   text-align: right; /* Align image to the right */
   padding: 2rem;
-  animation: fadeIn 2s ease-in-out 1s both; /* Add fade-in animation with delay */
 }
 
 .home-image img {
@@ -82,7 +70,6 @@
   flex-direction: column;
   align-items: center; /* Center align the links section */
   padding: 5rem;
-  animation: fadeIn 1.5s ease-in-out 1.5s both; /* Add fade-in animation with delay */
 }
 
 .section-link {
@@ -126,4 +113,25 @@
   color: #ffffff;
   background: inherit; /* Ensure footer inherits the background */
   margin-top: 2rem;
+}
+
+.projects-content {
+  display: flex;
+  flex-direction: column; /* Arrange items in a column */
+  align-items: flex-start; /* Align items to the left */
+  margin-top: 1rem;
+}
+
+.projects-logo {
+  width: 300px; /* Adjust size as needed */
+  height: auto;
+  margin-bottom: 1rem; /* Add space below the image */
+}
+
+.projects-content ul {
+  list-style-type: disc;
+  margin: 0;
+  padding-left: 20px;
+  color: #ffffff;
+  text-align: left; /* Ensure bullet points are left-aligned */
 }
