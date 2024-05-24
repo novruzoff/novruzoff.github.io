@@ -8,7 +8,7 @@ const About = lazy(() => import('./components/About'));
 const Projects = lazy(() => import('./components/Projects'));
 
 const App = () => (
-  <Router basename={process.env.PUBLIC_URL}>
+  <Router>
     <div className="App">
       <Header />
       <Suspense fallback={<div>Loading...</div>}>
