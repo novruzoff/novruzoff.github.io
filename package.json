@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A portfolio website built with React",
   "main": "index.js",
-  "homepage": "https://novruzoff.github.io/novruzoff.github.io/",
+  "homepage": "https://novruzoff.github.io/",
   "scripts": {
     "start": "webpack serve --open --mode development",
     "build": "webpack --mode production",
