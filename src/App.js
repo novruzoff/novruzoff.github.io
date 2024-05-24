@@ -6,10 +6,9 @@ import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 const Home = lazy(() => import('./components/Home'));
 const About = lazy(() => import('./components/About'));
 const Projects = lazy(() => import('./components/Projects'));
-const Contact = lazy(() => import('./components/Contact'));
 
 const App = () => (
-  <Router>
+  <Router basename={process.env.PUBLIC_URL}>
     <div className="App">
       <Header />
       <Suspense fallback={<div>Loading...</div>}>
