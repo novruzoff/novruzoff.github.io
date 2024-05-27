@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknovruzoff_github_io=self.webpackChunknovruzoff_github_io||[]).push([[241],{241:(e,t,u)=>{u.r(t),u.d(t,{default:()=>l});var n=u(540);const l=function(){return n.createElement("div",null,n.createElement("p",null,"Additional details about the project..."))}}}]);
