@@ -7,6 +7,7 @@ import ReLeasePic3 from '../assets/ReLease_pic3.png';
 import githubLogo from '../assets/github.png';
 import devpostLogo from '../assets/devpost.png';
 
+
 const Projects = () => (
   <main>
     <section id="projects">

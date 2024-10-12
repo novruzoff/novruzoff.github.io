@@ -34,7 +34,7 @@ const Header = () => {
       <nav>
         <Link to="/about" className={location.pathname === '/about' ? 'active' : ''}>About</Link>
         <Link to="/projects" className={location.pathname === '/projects' ? 'active' : ''}>Projects</Link>
-        <a href="./CV.pdf" target="_blank" rel="noopener noreferrer" className={location.pathname === '/resume' ? 'active' : ''}>Resume</a>
+        <a href="./CV 2.0.pdf" target="_blank" rel="noopener noreferrer" className={location.pathname === '/resume' ? 'active' : ''}>Resume</a>
       </nav>
     </header>
   );

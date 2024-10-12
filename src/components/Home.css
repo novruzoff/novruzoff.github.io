@@ -135,3 +135,58 @@
   color: #ffffff;
   text-align: left; /* Ensure bullet points are left-aligned */
 }
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjusted minmax size */
+  gap: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  justify-items: center; /* Center items horizontally */
+}
+
+.project-grid-item {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.10);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(9.8px);
+  -webkit-backdrop-filter: blur(9.8px);
+  transition: transform 0.3s; /* Transition for hover effect */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center-align items */
+  justify-content: space-between; /* Distribute space between elements */
+  height: 400px; /* Set a fixed height for consistency */
+  box-sizing: border-box; /* Ensure padding is included in height */
+  text-align: center; /* Center-align text */
+}
+
+.project-grid-item:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.project-image {
+  width: 150px; /* Adjust to a consistent size */
+  height: 150px; /* Adjust to a consistent size */
+  object-fit: contain; /* Ensure image maintains aspect ratio */
+  border-radius: 10px;
+  margin-bottom: 1rem; /* Add space below the image */
+}
+
+.project-grid-item h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0.5rem 0; /* Ensure consistent spacing */
+}
+
+.project-grid-item p {
+  font-size: 1.1rem;
+  color: #c9c9c9;
+  margin: 0.5rem 0; /* Ensure consistent spacing */
+}
+
+.project-grid-item .btn-more {
+  margin-top: auto; /* Push the button to the bottom */
+}

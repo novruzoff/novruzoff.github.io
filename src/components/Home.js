@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
 import profileImage from '../assets/MN_Logo.png';
-import projectsLogo from '../assets/ReLease_Logo.png'; // Add this line
+import projectsLogo from '../assets/ReLease_Logo2.png'; // Add this line
 import instagramIcon from '../assets/instagram.png'; // Add the icons
 import linkedinIcon from '../assets/linkedin.png';
 import mailIcon from '../assets/mail.png';
@@ -45,6 +45,14 @@ const SectionLink = ({ id, title, description, children }) => (
   </div>
 );
 
+const ProjectGridItem = ({ image, title, description }) => (
+  <div className="project-grid-item">
+    <img src={image} alt={title} className="project-image" />
+    <h3>{title}</h3>
+    <p>{description}</p>
+  </div>
+);
+
 const HomePage = () => (
   <div>
     <Home />
@@ -58,11 +66,18 @@ const HomePage = () => (
         id="projects"
         title="Projects"
       >
-        <div className="projects-content">
-          <img src={projectsLogo} alt="Projects Logo" className="projects-logo" />
-          <ul>
-            <li><strong>ReLease</strong> - Website for Canadians to transfer their lease.</li>
-          </ul>
+        <div className="project-grid">
+          <ProjectGridItem
+            image={projectsLogo}
+            title="ReLease"
+            description="A website for Canadians for lease transfer"
+          />
+          <ProjectGridItem
+            image={profileImage}
+            title="Portfolio Website"
+            description="This website! :)"
+          />
+          {/* Add more ProjectGridItem components as needed */}
         </div>
       </SectionLink>
     </section>
