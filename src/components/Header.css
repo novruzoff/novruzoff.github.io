@@ -61,5 +61,5 @@ header nav a.active {
 }
 
 header nav a:not(.active) {
-  color: #cecece; /* Slightly gray color for inactive links */
+  color: #ffffff; /* Slightly gray color for inactive links */
 }

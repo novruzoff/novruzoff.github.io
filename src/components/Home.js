@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
-import profileImage from '../assets/MN_Logo.png';
-import projectsLogo from '../assets/ReLease_Logo2.png'; // Add this line
-import instagramIcon from '../assets/instagram.png'; // Add the icons
+import profileImage from '../assets/homepage-photo.jpg';
+import MNLogo from '../assets/MN_Logo.png';
+import projectsLogo from '../assets/ReLease_Logo2.png';
+import instagramIcon from '../assets/instagram.png';
 import linkedinIcon from '../assets/linkedin.png';
 import mailIcon from '../assets/mail.png';
 import githubIcon from '../assets/github.png';
@@ -29,7 +30,7 @@ const Home = () => (
       </div>
     </div>
     <div className="home-image">
-      <img src={profileImage} alt="Profile" />
+      <img src={profileImage} alt="Profile" className="profile-photo" />
     </div>
   </section>
 );
@@ -56,12 +57,25 @@ const ProjectGridItem = ({ image, title, description }) => (
 const HomePage = () => (
   <div>
     <Home />
+    
+    {/* New "About Me" section */}
+    <section id="about-me" className="about-section">
+      <h3>ABOUT</h3>
+      <p>
+        Hey! My name is Murad Novruzov - I am an Azerbaijani Computer Science student at McGill University (Montreal, Canada).
+      </p>
+      <p>I have a passion for Software Engineering and AI, and I'm proficient in both front-end and back-end development.</p>
+      <h3>EDUCATION</h3>
+      <p>McGill University - Bachelor of Science in Computer Science</p>
+      <h3>SKILLS</h3>
+      <ul>
+        <li>Languages: Python, Java, C, Bash, HTML/CSS, JavaScript, TypeScript, Assembly</li>
+        <li>Frameworks: React.js, Node.js, Django, Dash (Python)</li>
+        <li>Developer Tools: Git, MongoDB, Visual Studio, PyCharm, Intellij IDEA, Xcode</li>
+      </ul>
+    </section>
+
     <section className="links">
-      <SectionLink
-        id="about"
-        title="About me"
-        description="My name is Murad Novruzov - an Azerbaijani Computer Science student at McGill University based in Montreal, Canada. I have a passion for Software Engineering and AI, proficient in both front-end and back-end development."
-      />
       <SectionLink
         id="projects"
         title="Projects"
@@ -73,16 +87,17 @@ const HomePage = () => (
             description="A website for Canadians for lease transfer"
           />
           <ProjectGridItem
-            image={profileImage}
+            image={MNLogo}
             title="Portfolio Website"
             description="This website! :)"
           />
-          {/* Add more ProjectGridItem components as needed */}
         </div>
       </SectionLink>
     </section>
+
     <div className="footer-text">
       <p>© 2024 - Murad Novruzov</p>
+      <p>Version 2.0.1</p>
     </div>
   </div>
 );
