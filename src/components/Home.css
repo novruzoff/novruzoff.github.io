@@ -10,13 +10,16 @@
   height: 100vh;
   box-sizing: border-box;
   background: inherit; /* Ensure main content inherits the background */
+  max-width: 1600px; /* Limit the width for very large screens */
 }
 
+/* Home Content Text */
 .home-content {
   flex: 1;
   padding: 2rem;
-  text-align: center; /* Center-align title */
-  max-width: 400px;
+  text-align: center;
+  max-width: 45%; /* Restrict maximum width of text to balance space */
+  align-self: center; /* Center align vertically */
 }
 
 .home-content h1 {
@@ -52,62 +55,103 @@
   transform: scale(1.15); /* Slightly enlarge the icon on hover */
 }
 
+/* Home Image */
 .home-image {
   flex: 1;
   text-align: right;
   padding: 2rem;
+  max-width: 45%; /* Restrict the maximum width of the image section */
+  display: flex;
+  justify-content: center; /* Center horizontally for visual balance */
+  align-items: center; /* Center vertically */
 }
 
 .home-image img.profile-photo {
-  width: 500px; /* Fixed width */
-  height: 500px; /* Fixed height */
+  width: 400px; /* Fixed width */
+  height: 400px; /* Fixed height */
   border-radius: 50%; /* Circular shape */
   border: 5px solid #0d3b66; /* Border color */
   object-fit: cover; /* Ensure the image fits inside the circle */
-  max-width: 1000px;
-  min-width: 500px;
-  max-height: 1000px;
-  min-height: 500px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25), /* Add shadow to give 3D effect */
               0 6px 6px rgba(0, 0, 0, 0.22);    /* Slight shadow to add depth */
+}
+
+/* General Styles for All Viewports */
+@media (max-width: 768px) {
+  #home {
+    flex-direction: column; /* Stack content vertically for small screens */
+    padding: 4rem 1rem;
+  }
+
+  .home-content,
+  .home-image {
+    max-width: 100%; /* Take up full width in a column layout */
+    text-align: center;
+  }
+
+  .home-image img.profile-photo {
+    width: 300px; /* Reduce image size for smaller screens */
+    height: 300px;
+  }
 }
 
 /* About Me Section */
 .about-section {
   background-color: #ffffff; /* Light background color for about section */
-  padding: 2rem;
+  padding: 3rem 10% 3rem; /* Equal top and bottom padding for symmetrical spacing */
   text-align: left;
+  max-width: 85%; /* Set the max-width relative to the screen size for a better fit */
+  width: 100%; /* Ensure it uses the full width available within the max-width limit */
+  margin: 0 auto; /* Center the section horizontally */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Add subtle shadow for separation */
 }
 
-.about-section h2 {
+.about-section h3 {
   font-size: 2.5rem;
   color: #003049;
   text-align: left;
-  padding: 2rem;
+  padding: 1rem 0 0.5rem; /* Space above and below header */
+  margin-bottom: 1rem; /* Reduce margin for better proximity between headers and text */
 }
 
 .about-section p, .about-section ul {
   font-size: 1.2rem;
   color: #003049;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.about-section h3 {
-  font-size: 1.8rem;
-  margin-top: 2rem;
-  color: #003049;
-  text-align: left;
-  padding: 2rem;
+  margin: 0; /* Align text with headers */
+  max-width: 100%; /* Set a percentage width for the content */
+  line-height: 1.6; /* Improve readability with more spacing between lines */
 }
 
 .about-section ul {
   list-style: none;
-  padding-bottom: 2rem;
+  padding-left: 0;
 }
 
 .about-section ul li {
   margin-bottom: 1rem;
+}
+
+/* Education and Experience Entry Styling */
+.education-entry, .experience-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Align items vertically centered */
+  margin-bottom: 2rem;
+}
+
+.education-year, .experience-year {
+  font-weight: bold;
+  color: #003049;
+  align-self: flex-start; /* Align year to the top for better alignment with the name */
+  margin-top: 0.5rem; /* Align with the main line */
+}
+
+.education-title, .experience-title {
+  display: block;
+  font-style: italic; /* Italicize text */
+  color: #003049;
+  margin-top: 0.5rem; /* Spacing after the main name */
+  font-weight: normal;
 }
 
 /* Projects and Links Section */

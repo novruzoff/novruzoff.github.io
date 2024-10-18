@@ -12,7 +12,8 @@ import githubIcon from '../assets/github.png';
 const Home = () => (
   <section id="home">
     <div className="home-content">
-      <h1>Murad Novruzov</h1>
+      <h1>Murad</h1>
+      <h1>Novruzov</h1>
       <p>Computer Science Student</p>
       <div className="social-icons">
         <a href="https://instagram.com/novruzoffmurad" target="_blank" rel="noopener noreferrer">
@@ -62,16 +63,33 @@ const HomePage = () => (
     <section id="about-me" className="about-section">
       <h3>ABOUT</h3>
       <p>
-        Hey! My name is Murad Novruzov - I am an Azerbaijani Computer Science student at McGill University (Montreal, Canada).
+        Hey! My name is <strong>Murad Novruzov</strong> - I am an Azerbaijani Computer Science student at <strong>McGill University</strong> (Montreal, Canada).
       </p>
-      <p>I have a passion for Software Engineering and AI, and I'm proficient in both front-end and back-end development.</p>
+      <p>I have a passion for <strong>Software Engineering</strong> and <strong>AI</strong>, and I'm proficient in both front-end and back-end development.</p>
+
       <h3>EDUCATION</h3>
-      <p>McGill University - Bachelor of Science in Computer Science</p>
+      <div className="education-entry">
+        <div>
+          <p><strong>McGill University</strong></p>
+          <span className="education-title">Bachelor of Science in Computer Science</span>
+        </div>
+        <div className="education-year">2023 — 2027</div>
+      </div>
+
+      <h3>EXPERIENCE</h3>
+      <div className="experience-entry">
+        <div>
+          <p><strong>ARB (Azerbaijan Republic Broadcaster)</strong></p>
+          <span className="experience-title">IT and Web Development Intern</span>
+        </div>
+        <div className="experience-year">June 2023 — August 2023</div>
+      </div>
+
       <h3>SKILLS</h3>
       <ul>
-        <li>Languages: Python, Java, C, Bash, HTML/CSS, JavaScript, TypeScript, Assembly</li>
-        <li>Frameworks: React.js, Node.js, Django, Dash (Python)</li>
-        <li>Developer Tools: Git, MongoDB, Visual Studio, PyCharm, Intellij IDEA, Xcode</li>
+        <li><strong>Languages</strong>: Python, Java, C, Bash, HTML/CSS, JavaScript, TypeScript, Assembly</li>
+        <li><strong>Frameworks</strong>: React.js, Node.js, Django, Dash (Python)</li>
+        <li><strong>Developer Tools</strong>: Git, MongoDB, Visual Studio, PyCharm, Intellij IDEA, Xcode</li>
       </ul>
     </section>
 
@@ -96,8 +114,8 @@ const HomePage = () => (
     </section>
 
     <div className="footer-text">
-      <p>© 2024 - Murad Novruzov</p>
-      <p>Version 2.0.1</p>
+      <p>2024 - Murad Novruzov</p>
+      <p>Version 2.0.2</p>
     </div>
   </div>
 );
