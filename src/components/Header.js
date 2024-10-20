@@ -32,7 +32,6 @@ const Header = () => {
         <Link to="/"><img src={logo} alt="Murad Novruzov Logo" /></Link>
       </div>
       <nav>
-        <Link to="/about" className={location.pathname === '/about' ? 'active' : ''}>About</Link>
         <Link to="/projects" className={location.pathname === '/projects' ? 'active' : ''}>Projects</Link>
         <a href="./CV.pdf" target="_blank" rel="noopener noreferrer" className={location.pathname === '/resume' ? 'active' : ''}>Resume</a>
       </nav>

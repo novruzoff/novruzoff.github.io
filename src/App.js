@@ -4,7 +4,6 @@ import Header from './components/Header';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 
 const Home = lazy(() => import('./components/Home'));
-const About = lazy(() => import('./components/About'));
 const Projects = lazy(() => import('./components/Projects'));
 
 const App = () => {
@@ -36,7 +35,6 @@ const App = () => {
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
           </Routes>
         </Suspense>

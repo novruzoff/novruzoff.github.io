@@ -46,13 +46,13 @@
 }
 
 .social-icons img {
-  width: 40px; /* Adjust size as needed */
+  width: 40px;
   height: 40px;
   transition: transform 0.3s;
 }
 
 .social-icons img:hover {
-  transform: scale(1.15); /* Slightly enlarge the icon on hover */
+  transform: scale(1.15);
 }
 
 /* Home Image */
@@ -60,66 +60,53 @@
   flex: 1;
   text-align: right;
   padding: 2rem;
-  max-width: 45%; /* Restrict the maximum width of the image section */
+  max-width: 45%;
   display: flex;
-  justify-content: center; /* Center horizontally for visual balance */
-  align-items: center; /* Center vertically */
+  justify-content: center;
+  align-items: center;
 }
 
 .home-image img.profile-photo {
-  width: 400px; /* Fixed width */
-  height: 400px; /* Fixed height */
-  border-radius: 50%; /* Circular shape */
-  border: 5px solid #0d3b66; /* Border color */
-  object-fit: cover; /* Ensure the image fits inside the circle */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25), /* Add shadow to give 3D effect */
-              0 6px 6px rgba(0, 0, 0, 0.22);    /* Slight shadow to add depth */
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  border: 5px solid #0d3b66;
+  object-fit: cover;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25), 0 6px 6px rgba(0, 0, 0, 0.22);
+  transition: none; /* Disable any transitions */
+  pointer-events: none; /* Prevent clicking interaction */
 }
 
-/* General Styles for All Viewports */
-@media (max-width: 768px) {
-  #home {
-    flex-direction: column; /* Stack content vertically for small screens */
-    padding: 4rem 1rem;
-  }
-
-  .home-content,
-  .home-image {
-    max-width: 100%; /* Take up full width in a column layout */
-    text-align: center;
-  }
-
-  .home-image img.profile-photo {
-    width: 300px; /* Reduce image size for smaller screens */
-    height: 300px;
-  }
+/* Ensure image size consistency across navigations */
+.home-image img.profile-photo:hover {
+  transform: none; /* Ensure image doesn't scale on hover */
 }
 
 /* About Me Section */
 .about-section {
-  background-color: #ffffff; /* Light background color for about section */
-  padding: 3rem 10% 3rem; /* Equal top and bottom padding for symmetrical spacing */
+  background-color: #ffffff;
+  padding: 3rem 10%;
   text-align: left;
-  max-width: 85%; /* Set the max-width relative to the screen size for a better fit */
-  width: 100%; /* Ensure it uses the full width available within the max-width limit */
-  margin: 0 auto; /* Center the section horizontally */
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Add subtle shadow for separation */
+  max-width: 85%;
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 .about-section h3 {
   font-size: 2.5rem;
   color: #003049;
-  text-align: left;
-  padding: 1rem 0 0.5rem; /* Space above and below header */
-  margin-bottom: 1rem; /* Reduce margin for better proximity between headers and text */
+  padding: 1rem 0 0.5rem;
+  margin-bottom: 1rem;
 }
 
-.about-section p, .about-section ul {
+.about-section p,
+.about-section ul {
   font-size: 1.2rem;
   color: #003049;
-  margin: 0; /* Align text with headers */
-  max-width: 100%; /* Set a percentage width for the content */
-  line-height: 1.6; /* Improve readability with more spacing between lines */
+  margin: 0;
+  max-width: 100%;
+  line-height: 1.6;
 }
 
 .about-section ul {
@@ -132,154 +119,116 @@
 }
 
 /* Education and Experience Entry Styling */
-.education-entry, .experience-entry {
+.education-entry,
+.experience-entry {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Align items vertically centered */
+  align-items: center;
   margin-bottom: 2rem;
 }
 
-.education-year, .experience-year {
+.education-year,
+.experience-year {
   font-weight: bold;
   color: #003049;
-  align-self: flex-start; /* Align year to the top for better alignment with the name */
-  margin-top: 0.5rem; /* Align with the main line */
+  align-self: flex-start;
+  margin-top: 0.5rem;
 }
 
-.education-title, .experience-title {
+.education-title,
+.experience-title {
   display: block;
-  font-style: italic; /* Italicize text */
+  font-style: italic;
   color: #003049;
-  margin-top: 0.5rem; /* Spacing after the main name */
-  font-weight: normal;
-}
-
-/* Projects and Links Section */
-.links {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center align the links section */
-  padding: 5rem;
-}
-
-.section-link {
-  margin: 2rem 0;
-  width: 100%;
-  max-width: 1200px; /* Adjust as needed for your layout */
-}
-
-.section-link h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 1rem;
-  text-align: center; /* Center-align titles */
-}
-
-.section-link p {
-  font-size: 1.1rem;
-  color: #ffffff;
-  margin-bottom: 1rem;
-  text-align: left; /* Ensure descriptions are left-aligned */
-}
-
-.section-link .btn-more {
-  display: block; /* Make the link a block element */
-  color: rgb(0, 153, 255);
-  text-decoration: none;
-  font-weight: 700;
-  border-radius: 7px;
-  text-align: left; /* Left-align the "Learn More" links */
-  margin-top: 1rem;
-}
-
-.section-link .btn-more:hover {
-  text-decoration: underline;
-}
-
-/* Footer */
-.footer-text {
-  text-align: center;
-  padding: 2rem;
-  color: #ffffff;
-  background: inherit; /* Ensure footer inherits the background */
-  margin-top: 2rem;
+  margin-top: 0.5rem;
 }
 
 /* Projects Section */
-.projects-content {
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: column; /* Arrange items in a column */
-  align-items: flex-start; /* Align items to the left */
-  margin-top: 1rem;
-}
-
-.projects-logo {
-  width: 300px; /* Adjust size as needed */
-  height: auto;
-  margin-bottom: 1rem; /* Add space below the image */
-}
-
-.projects-content ul {
-  list-style-type: disc;
-  margin: 0;
-  padding-left: 20px;
-  color: #ffffff;
-  text-align: left; /* Ensure bullet points are left-aligned */
-}
-
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjusted minmax size */
-  gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px; /* Increase gap between grid items */
   width: 100%;
   box-sizing: border-box;
-  justify-items: center; /* Center items horizontally */
+  margin-top: 50px;
+  justify-items: center;
+  align-content: left;
+  padding-left: 10%;
 }
 
 .project-grid-item {
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.10);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(9.8px);
-  -webkit-backdrop-filter: blur(9.8px);
-  transition: transform 0.3s; /* Transition for hover effect */
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center-align items */
-  justify-content: space-between; /* Distribute space between elements */
-  height: 400px; /* Set a fixed height for consistency */
-  box-sizing: border-box; /* Ensure padding is included in height */
-  text-align: center; /* Center-align text */
+  width: 350px;
+  height: 350px;
+  perspective: 1000px;
+  display: inline-block;
 }
 
-.project-grid-item:hover {
-  transform: scale(1.05); /* Slightly enlarge on hover */
+.flip-card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.project-grid-item:hover .flip-card {
+  transform: rotateY(180deg);
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-back {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .project-image {
-  width: 150px; /* Adjust to a consistent size */
-  height: 150px; /* Adjust to a consistent size */
-  object-fit: contain; /* Ensure image maintains aspect ratio */
+  width: 200px; /* Increase logo size */
+  height: 200px;
+  object-fit: contain;
   border-radius: 10px;
-  margin-bottom: 1rem; /* Add space below the image */
 }
 
 .project-grid-item h3 {
   font-size: 1.75rem;
   font-weight: 700;
   color: #ffffff;
-  margin: 0.5rem 0; /* Ensure consistent spacing */
+  margin: 0.25rem 0;
 }
 
 .project-grid-item p {
   font-size: 1.1rem;
   color: #c9c9c9;
-  margin: 0.5rem 0; /* Ensure consistent spacing */
-}
-
-.project-grid-item .btn-more {
-  margin-top: auto; /* Push the button to the bottom */
+  word-wrap: break-word;
+  text-align: center;
+  padding: 0 1rem;
 }

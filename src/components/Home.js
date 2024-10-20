@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './Home.css';
 import profileImage from '../assets/homepage-photo.jpg';
 import MNLogo from '../assets/MN_Logo.png';
@@ -8,6 +7,7 @@ import instagramIcon from '../assets/instagram.png';
 import linkedinIcon from '../assets/linkedin.png';
 import mailIcon from '../assets/mail.png';
 import githubIcon from '../assets/github.png';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => (
   <section id="home">
@@ -36,24 +36,29 @@ const Home = () => (
   </section>
 );
 
-const SectionLink = ({ id, title, description, children }) => (
-  <div className="section-link">
-    <h2>{title}</h2>
-    <p>{description}</p>
-    {children}
-    <Link className="btn-more" to={`/${id}`}>
-      Learn More
-    </Link>
-  </div>
-);
+const ProjectGridItem = ({ image, title, description }) => {
+  const navigate = useNavigate();
 
-const ProjectGridItem = ({ image, title, description }) => (
-  <div className="project-grid-item">
-    <img src={image} alt={title} className="project-image" />
-    <h3>{title}</h3>
-    <p>{description}</p>
-  </div>
-);
+  const handleClick = () => {
+    navigate('/projects');
+  };
+
+  return (
+    <div className="project-grid-item" onClick={handleClick}>
+      <div className="flip-card">
+        <div className="flip-card-inner">
+          <div className="flip-card-front">
+            <img src={image} alt={title} className="project-image" />
+          </div>
+          <div className="flip-card-back">
+            <h3>{title}</h3>
+            <p>{description}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const HomePage = () => (
   <div>
@@ -94,10 +99,8 @@ const HomePage = () => (
     </section>
 
     <section className="links">
-      <SectionLink
-        id="projects"
-        title="Projects"
-      >
+      <div className="section-link">
+        <h2>PROJECTS</h2>
         <div className="project-grid">
           <ProjectGridItem
             image={projectsLogo}
@@ -110,12 +113,12 @@ const HomePage = () => (
             description="This website! :)"
           />
         </div>
-      </SectionLink>
+      </div>
     </section>
 
     <div className="footer-text">
       <p>2024 - Murad Novruzov</p>
-      <p>Version 2.0.2</p>
+      <p>Version 2.1.0</p>
     </div>
   </div>
 );
