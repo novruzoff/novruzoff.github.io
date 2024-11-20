@@ -82,19 +82,27 @@ const HomePage = () => (
       </div>
 
       <h3>EXPERIENCE</h3>
-      <div className="experience-entry">
-        <div>
-          <p><strong>ARB (Azerbaijan Republic Broadcaster)</strong></p>
-          <span className="experience-title">IT and Web Development Intern</span>
+      <div className="experience-section">
+        <div className="experience-entry">
+          <div className="experience-info">
+          <p><strong>MindVista McGill</strong></p>
+            <span className="experience-title">Web and Tech Developer</span>
+          </div>
+          <div className="experience-year">November 2024 — present</div>
         </div>
-        <div className="experience-year">June 2023 — August 2023</div>
+        <div className="experience-entry">
+          <div className="experience-info">
+          <p><strong>ARB (Azerbaijan Republic Broadcaster)</strong></p>
+            <span className="experience-title">IT and Web Development Intern</span>
+          </div>
+          <div className="experience-year">June 2023 — August 2023</div>
+        </div>
       </div>
 
       <h3>SKILLS</h3>
       <ul>
         <li><strong>Languages</strong>: Python, Java, C, Bash, HTML/CSS, JavaScript, TypeScript, Assembly</li>
-        <li><strong>Frameworks</strong>: React.js, Node.js, Django, Dash (Python)</li>
-        <li><strong>Developer Tools</strong>: Git, MongoDB, Visual Studio, PyCharm, Intellij IDEA, Xcode</li>
+        <li><strong>Software</strong>: React.js, Node.js, WordPress, Django, Dash (Python), Git</li>
       </ul>
     </section>
 
@@ -119,7 +127,7 @@ const HomePage = () => (
 
     <div className="footer-text">
       <p>2024 - Murad Novruzov</p>
-      <p>Version 2.1.3</p>
+      <p>Version 2.1.4</p>
     </div>
   </div>
 );
