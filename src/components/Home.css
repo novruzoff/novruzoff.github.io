@@ -11,9 +11,15 @@
   box-sizing: border-box;
   background: inherit; /* Ensure main content inherits the background */
   max-width: 1600px; /* Limit the width for very large screens */
+  overflow-x: hidden;
 }
 
-/* For screens smaller than 768px, change layout to column */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 @media (max-width: 768px) {
   #home {
     flex-direction: column;
@@ -37,7 +43,7 @@
 .home-content {
   flex: 1;
   padding: 2rem;
-  text-align: center;
+  text-align: center; /* Center text */
   max-width: 45%; /* Restrict maximum width of text to balance space */
   align-self: center; /* Center align vertically */
 }
@@ -47,6 +53,7 @@
   margin: 0;
   font-weight: 700;
   color: #ffffff;
+  line-height: 1.2; /* Adjust for better spacing */
 }
 
 .home-content p {
@@ -55,6 +62,28 @@
   color: #ffffff;
 }
 
+/* Center text properly for smaller screens */
+@media (max-width: 768px) {
+  .home-content h1 {
+    font-size: 3rem; /* Reduce size for smaller screens */
+  }
+
+  .home-content p {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-content h1 {
+    font-size: 2.5rem; /* Further reduce for very small screens */
+  }
+
+  .home-content p {
+    font-size: 1rem;
+  }
+}
+
+/* Social Icons */
 .social-icons {
   display: flex;
   justify-content: center;
@@ -71,36 +100,40 @@
   transition: transform 0.3s;
 }
 
-social-icons img:hover {
+.social-icons img:hover {
   transform: scale(1.15);
 }
 
 /* Home Image */
 .home-image {
   flex: 1;
-  text-align: right;
-  padding: 2rem;
-  max-width: 45%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* Centers the image horizontally */
+  align-items: center; /* Centers the image vertically */
+  max-width: 100%; /* Prevents overflow */
+  padding: 2rem;
 }
 
 .home-image img.profile-photo {
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  border: 5px solid #0d3b66;
-  object-fit: cover; /* Prevent stretching */
+  width: 100%; /* Let the parent container handle sizing */
+  max-width: 400px; /* Set the maximum size of the image */
+  aspect-ratio: 1 / 1; /* Ensure it's always a square before applying circular shape */
+  border-radius: 50%; /* Turns the square into a circle */
+  border: 5px solid #0d3b66; /* Border styling */
+  object-fit: cover; /* Ensures proper cropping without stretching */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25), 0 6px 6px rgba(0, 0, 0, 0.22);
-  transition: none; /* Disable any transitions */
-  pointer-events: none; /* Prevent clicking interaction */
+  transition: max-width 0.3s ease; /* Smooth scaling */
 }
 
 @media (max-width: 768px) {
   .home-image img.profile-photo {
-    width: 300px;
-    height: 300px;
+    max-width: 300px; /* Resize for medium screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .home-image img.profile-photo {
+    max-width: 200px; /* Resize for small screens */
   }
 }
 
@@ -155,6 +188,7 @@ social-icons img:hover {
   color: #003049;
   align-self: flex-start;
   margin-top: 0.5rem;
+  text-align: right; /* Ensure right alignment */
 }
 
 .education-title,
@@ -166,16 +200,37 @@ social-icons img:hover {
 }
 
 /* Projects Section */
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 30px; /* Increase gap between grid items */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  padding-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.section-link {
+  display: flex;
+  max-width: 85%;
   width: 100%;
-  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.project-grid1 {
+  gap: 30px; /* Space between items */
   margin-top: 50px;
-  justify-items: center;
-  align-content: left;
-  padding-left: 10%;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  box-sizing: border-box; /* Include padding and borders in the width */
+}
+
+.project-grid2 {
+  padding-left: 5%;
+  justify-content: flex-start; /* Align items to the left by default */
+  align-items: center;
+  gap: 30px; /* Space between items */
+  margin-top: 50px;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  box-sizing: border-box; /* Include padding and borders in the width */
 }
 
 .project-grid-item {
@@ -183,6 +238,24 @@ social-icons img:hover {
   height: 350px;
   perspective: 1000px;
   display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .section-link {
+    flex-direction: column; /* Stack grids vertically */
+    padding: 0; /* Remove extra padding */
+    gap: 0;
+  }
+
+  .project-grid1,
+  .project-grid2 {
+    width: 100%; /* Allow full width for smaller screens */
+    padding-left: 0;
+  }
+
+  .project-grid2 {
+    padding-bottom: 20px;
+  }
 }
 
 .flip-card {

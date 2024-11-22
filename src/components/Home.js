@@ -68,9 +68,15 @@ const HomePage = () => (
     <section id="about-me" className="about-section">
       <h3>ABOUT</h3>
       <p>
-        Hey! My name is <strong>Murad Novruzov</strong> - I am an Azerbaijani Computer Science student at <strong>McGill University</strong> (Montreal, Canada).
+        Hey! My name is <strong>Murad Novruzov</strong> - I am an Azerbaijani Computer Science student at <strong>McGill University</strong> in Montreal, Canada.
       </p>
-      <p>I have a passion for <strong>Software Engineering</strong> and <strong>AI</strong>, and I'm proficient in both front-end and back-end development.</p>
+      <br></br>
+      <p>I have a passion for <strong>Software</strong> and <strong>Web Development</strong>. 
+      With experience in both front-end and back-end development, I enjoy turning ideas into functional and visually appealing applications. 
+      I’m constantly exploring new technologies and striving to expand my skill set to deliver impactful, forward-thinking solutions.
+      </p>
+      <br></br>
+      <p>Right now, I am learning <strong>Swift</strong>, a programming language designed by Apple for iOS and MacOS.</p>
 
       <h3>EDUCATION</h3>
       <div className="education-entry">
@@ -107,19 +113,23 @@ const HomePage = () => (
     </section>
 
     <section className="links">
-      <div className="section-link">
+      <div className="section-title">
         <h2>PROJECTS</h2>
-        <div className="project-grid">
+        <div className="section-link">
+        <div className="project-grid1">
           <ProjectGridItem
             image={projectsLogo}
             title="ReLease"
             description="A website for Canadians for lease transfer"
           />
-          <ProjectGridItem
+        </div>
+        <div className="project-grid2">
+        <ProjectGridItem
             image={MNLogo}
             title="Portfolio Website"
             description="This website! :)"
           />
+        </div>  
         </div>
       </div>
     </section>
@@ -127,7 +137,7 @@ const HomePage = () => (
 
     <div className="footer-text">
       <p>2024 - Murad Novruzov</p>
-      <p>Version 2.1.4</p>
+      <p>Version 2.2.0</p>
     </div>
   </div>
 );

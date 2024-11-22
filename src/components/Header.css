@@ -7,10 +7,18 @@ header {
   padding: 1rem 2rem;
   background: inherit; /* Ensure it inherits the background */
   position: fixed;
-  width: 100%;
+  width: 100%; /* Ensure it takes up the full width */
   top: 0;
   z-index: 10;
+  box-sizing: border-box; /* Include padding in width calculations */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
   transition: transform 0.3s ease-in-out; /* Add transition for smooth hiding/showing */
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 header.hidden {
@@ -18,13 +26,15 @@ header.hidden {
 }
 
 header.visible {
-  transform: translateY(0); /* Show header by moving it to its original position */
+  transform: translateY(
+    0
+  ); /* Show header by moving it to its original position */
 }
 
 header .logo {
   display: flex;
   align-items: center;
-  margin-left: 2rem; /* Add margin to move it right */
+  margin-left: 2.5%;
 }
 
 header .logo img {
@@ -38,7 +48,8 @@ header .logo img:hover {
 
 header nav {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.5rem; /* Space between navigation links */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 header nav a {
@@ -48,6 +59,7 @@ header nav a {
   padding: 0.5rem 1rem;
   border-radius: 7px;
   transition: background-color 0.3s ease, transform 0.3s; /* Add transition for magnifying effect */
+  white-space: nowrap; /* Prevent text wrapping */
 }
 
 header nav a:hover {
