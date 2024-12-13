@@ -137,7 +137,7 @@ const HomePage = () => (
 
     <div className="footer-text">
       <p>2024 - Murad Novruzov</p>
-      <p>Version 2.2.0</p>
+      <p>Version 2.2.1</p>
     </div>
   </div>
 );
