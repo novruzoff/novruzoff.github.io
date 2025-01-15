@@ -70,7 +70,7 @@ const Projects = () => (
 
     <div className="footer-text">
       <p>2025 - Murad Novruzov</p>
-      <p>Version 2.2.2</p>
+      <p>Version 2.2.3</p>
     </div>
   </main>
 );
