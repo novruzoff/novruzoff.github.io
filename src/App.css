@@ -1,10 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
 
 body {
   margin: 0;
-  font-family: "Montserrat", sans-serif;
-  background-color: #003049; /* Set solid background color */
-  color: #ffffff;
+  font-family: "JetBrains Mono", monospace;
+  background-color: #0a0a0a;
+  color: #f0f0f0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -25,83 +26,135 @@ body {
   background: inherit;
 }
 
-/* Glowing Circle */
+/* Modernized Glowing Circle */
 .glow {
   position: absolute;
-  width: 200px;
-  height: 200px;
-  background-color: #00798c;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
   border-radius: 100%;
-  pointer-events: none; /* Makes sure the element does not interfere with clicks */
-  filter: blur(100px);
-  opacity: 0.4;
+  pointer-events: none;
+  filter: blur(50px);
+  opacity: 0.3;
   transform: translate(-50%, -50%);
-  z-index: 9999;
+  z-index: 1;
 }
 
 header {
-  background: inherit !important;
+  background: rgba(10, 10, 10, 0.8) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  height: 60px;
 }
 
 #home {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
   margin: 0 auto;
-  padding: 8rem 2rem;
-  width: 100%;
-  height: 100vh;
+  padding: 80px 2rem 0;
+  min-height: 100vh;
   box-sizing: border-box;
   background: inherit;
+  position: relative;
 }
 
 .home-content {
-  flex: 1;
+  max-width: 800px;
   padding: 2rem;
-  text-align: center;
+  text-align: left;
+  z-index: 2;
+  margin-top: 40px;
 }
 
 .home-content h1 {
-  font-size: 4rem;
+  font-size: 3.5rem;
   margin: 0;
   font-weight: 700;
   color: #ffffff;
-  text-align: center;
+  font-family: "Space Mono", monospace;
+  letter-spacing: -2px;
+  line-height: 1.2;
 }
 
 .home-content p {
-  font-size: 1.5rem;
-  margin: 1rem 0;
-  color: #ffffff;
+  font-size: 1.25rem;
+  margin: 2rem 0;
+  color: #808080;
+  line-height: 1.6;
 }
 
 .btn-cv {
-  background-color: #ffffff;
-  color: #121212;
-  border: none;
-  padding: 0.75rem 1.5rem;
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1rem 2rem;
   cursor: pointer;
-  border-radius: 50px;
+  border-radius: 4px;
   margin-top: 2rem;
-  font-weight: 700;
-  transition: background-color 0.3s ease;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .btn-cv:hover {
-  background-color: #a5a5a5;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .home-image {
-  flex: 1;
-  text-align: right;
-  padding: 2rem;
+  position: relative;
+  margin: 2rem 0;
 }
 
 .home-image img {
-  max-width: 80%;
+  max-width: 300px;
   height: auto;
-  border-radius: 15px;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+}
+
+.home-image::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% + 40px);
+  height: calc(100% + 40px);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0.3) 40%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  border-radius: 50%;
+  filter: blur(20px);
+  animation: glow 2s infinite alternate;
+  z-index: 1;
+}
+
+@keyframes glow {
+  from {
+    opacity: 0.5;
+    filter: blur(20px);
+  }
+  to {
+    opacity: 0.8;
+    filter: blur(25px);
+  }
 }
 
 #about {
@@ -126,25 +179,68 @@ h2 {
 }
 
 .project {
-  background-color: inherit;
-  padding: 1.5rem;
-  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.03);
+  padding: 2rem;
+  border-radius: 4px;
   margin: 2rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.project:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
 }
 
 .project h3 {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #ffffff;
+  font-family: "Space Mono", monospace;
 }
 
 .project p {
-  font-size: 1.1rem;
-  color: #c9c9c9;
+  font-size: 1rem;
+  color: #808080;
+  line-height: 1.6;
 }
 
 .project a {
-  color: #2575fc;
+  color: #ffffff;
   text-decoration: none;
   font-weight: 700;
+  position: relative;
+}
+
+.project a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: #ffffff;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.project a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Subtle grid background */
+.App::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: 0;
+  pointer-events: none;
 }

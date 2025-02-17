@@ -1,6 +1,7 @@
 import React from 'react';
 import './Home.css';
 import profileImage from '../assets/homepage-photo.jpg';
+import altImage from '../assets/skimask-photo.png';
 import MNLogo from '../assets/MN_Logo.png';
 import projectsLogo from '../assets/ReLease_Logo2.png';
 import instagramIcon from '../assets/instagram.png';
@@ -31,7 +32,7 @@ const Home = () => (
       </div>
     </div>
     <div className="home-image">
-      <img src={profileImage} alt="Profile" className="profile-photo" />
+      <img src={altImage} alt="Profile" className="profile-photo" />
     </div>
   </section>
 );
@@ -137,7 +138,6 @@ const HomePage = () => (
 
     <div className="footer-text">
       <p>2025 - Murad Novruzov</p>
-      <p>Version 2.2.3</p>
     </div>
   </div>
 );
