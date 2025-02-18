@@ -37,7 +37,7 @@ const Home = () => (
   </section>
 );
 
-const ProjectGridItem = ({ image, title, description }) => {
+const ProjectGridItem = ({ title, description }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -48,9 +48,6 @@ const ProjectGridItem = ({ image, title, description }) => {
     <div className="project-grid-item" onClick={handleClick}>
       <div className="flip-card">
         <div className="flip-card-inner">
-          <div className="flip-card-front">
-            <img src={image} alt={title} className="project-image" />
-          </div>
           <div className="flip-card-back">
             <h3>{title}</h3>
             <p>{description}</p>
@@ -108,31 +105,31 @@ const HomePage = () => (
 
       <h3>SKILLS</h3>
       <ul>
-        <li><strong>Languages</strong>: Python, Java, C, Bash, HTML/CSS, JavaScript, TypeScript, Assembly</li>
-        <li><strong>Software</strong>: React.js, Node.js, WordPress, Django, Dash (Python), Git</li>
+        <li><strong>Languages</strong>: Python, Java, C++, C#, C, JavaScript, TypeScript, Swift, GoLang, HTML/CSS, Bash, Assembly, OCaml</li>
+        <li><strong>Software</strong>: MySQL, React.js, Node.js, Next.js, Django, Tailwind, Vercel, Vite, Unity, MongoDB, Dash (Python)</li>
       </ul>
     </section>
 
-    <section className="links">
-      <div className="section-title">
-        <h2>PROJECTS</h2>
-        <div className="section-link">
+    <section id="projects" className="projects">
+          <h3>PROJECTS</h3>
         <div className="project-grid1">
+        <ProjectGridItem
+            title="MindVista Website"
+            description="mindvista.ca: Where It All Comes Together."
+          />
+        </div>
+        <div className="project-grid2">
           <ProjectGridItem
-            image={projectsLogo}
             title="ReLease"
             description="A website for Canadians for lease transfer"
           />
         </div>
-        <div className="project-grid2">
+        <div className="project-grid3">
         <ProjectGridItem
-            image={MNLogo}
             title="Portfolio Website"
             description="This website! :)"
           />
-        </div>  
         </div>
-      </div>
     </section>
 
 

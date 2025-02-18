@@ -244,41 +244,111 @@ header {
   text-align: left;
 }
 
-/* Section Titles */
-.section-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #f0f0f0;
+/* Projects on Homepage */
+.projects {
+  padding: 3rem 10%;
   text-align: left;
-  padding: 3rem 10% 1rem;
-  font-family: "Space Mono", monospace;
-}
-
-/* Project Grid */
-.project-grid1,
-.project-grid2 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 30px;
-  padding: 2rem 10%;
-  max-width: 1600px;
+  width: 100%;
   margin: 0 auto;
 }
 
+.projects h3 {
+  font-size: 2.5rem;
+  color: #f0f0f0;
+  padding-left: 9.3%;
+  margin-bottom: 1rem;
+  font-family: "Space Mono", monospace;
+}
+
+.project-grid1,
+.project-grid2,
+.project-grid3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem 0;
+  max-width: 30%;
+  margin: 0 auto;
+}
+
+.project-grid-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 1.2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  min-height: 100px; /* Reduced height */
+  max-height: 150px; /* Added max-height */
+}
+
+.project-grid-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.project-grid-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.project-grid-item:hover::before {
+  opacity: 1;
+}
+
 .project-grid-item h3 {
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: #f0f0f0;
-  margin: 0.25rem 0;
+  margin: 0 0 0.75rem 0;
   text-align: left;
+  font-family: "Space Mono", monospace;
+  position: relative;
+  z-index: 2;
 }
 
 .project-grid-item p {
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   color: #808080;
   word-wrap: break-word;
   text-align: left;
-  padding: 0 1rem;
+  margin: 0;
+  line-height: 1.5;
+  position: relative;
+  z-index: 2;
+}
+
+/* Update responsive styles */
+@media (max-width: 768px) {
+  .section-title {
+    text-align: left;
+    padding: 3rem 0 1rem;
+    margin: 0 auto;
+    max-width: 85%;
+  }
+
+  .project-grid1,
+  .project-grid2,
+  .project-grid3 {
+    padding: 1rem 0;
+    grid-template-columns: 1fr;
+    max-width: 85%;
+    margin: 0 auto;
+  }
 }
 
 /* Responsive Adjustments */
