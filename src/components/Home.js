@@ -17,13 +17,25 @@ const Home = () => (
       <h1>Novruzov</h1>
       <p>Computer Science Student</p>
       <div className="social-icons">
-        <a href="https://instagram.com/novruzoffmurad" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://instagram.com/novruzoffmurad"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img src={instagramIcon} alt="Instagram" />
         </a>
-        <a href="https://linkedin.com/in/novruzovmurad" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://linkedin.com/in/novruzovmurad"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img src={linkedinIcon} alt="LinkedIn" />
         </a>
-        <a href="https://github.com/novruzoff" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://github.com/novruzoff"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img src={githubIcon} alt="GitHub" />
         </a>
         <a href="mailto:murad.novruzov1899@gmail.com">
@@ -37,7 +49,7 @@ const Home = () => (
   </section>
 );
 
-const ProjectGridItem = ({ title, description }) => {
+const ProjectCard = ({ title, description }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -45,15 +57,9 @@ const ProjectGridItem = ({ title, description }) => {
   };
 
   return (
-    <div className="project-grid-item" onClick={handleClick}>
-      <div className="flip-card">
-        <div className="flip-card-inner">
-          <div className="flip-card-back">
-            <h3>{title}</h3>
-            <p>{description}</p>
-          </div>
-        </div>
-      </div>
+    <div className="project-card" onClick={handleClick}>
+      <h3>{title}</h3>
+      <p>{description}</p>
     </div>
   );
 };
@@ -62,18 +68,20 @@ const HomePage = () => (
   <div>
     <Home />
     
-    {/* New "About Me" section */}
+    {/* About Me Section */}
     <section id="about-me" className="about-section">
       <h3>ABOUT</h3>
       <p>
         Hey! My name is <strong>Murad Novruzov</strong> - I am an Azerbaijani Computer Science student at <strong>McGill University</strong> in Montreal, Canada.
       </p>
-      <br></br>
-      <p>I have a passion for <strong>Software</strong> and <strong>Web Development</strong>. 
-      With experience in both front-end and back-end development, I enjoy turning ideas into functional and visually appealing applications. 
-      I’m constantly exploring new technologies and striving to expand my skill set to deliver impactful, forward-thinking solutions.
+      <br />
+      <p>
+        I have a passion for <strong>Software</strong> and <strong>Web Development</strong>.
+        With experience in both front-end and back-end development, I enjoy turning ideas into
+        functional and visually appealing applications. I’m constantly exploring new technologies
+        and striving to expand my skill set to deliver impactful, forward-thinking solutions.
       </p>
-      <br></br>
+      <br />
       <p>Right now, I am learning <strong>Swift</strong>, a programming language designed by Apple for iOS and MacOS.</p>
 
       <h3>EDUCATION</h3>
@@ -89,14 +97,14 @@ const HomePage = () => (
       <div className="experience-section">
         <div className="experience-entry">
           <div className="experience-info">
-          <p><strong>MindVista McGill</strong></p>
+            <p><strong>MindVista McGill</strong></p>
             <span className="experience-title">Web and Tech Developer</span>
           </div>
           <div className="experience-year">November 2024 — present</div>
         </div>
         <div className="experience-entry">
           <div className="experience-info">
-          <p><strong>ARB (Azerbaijan Republic Broadcaster)</strong></p>
+            <p><strong>ARB (Azerbaijan Republic Broadcaster)</strong></p>
             <span className="experience-title">IT and Web Development Intern</span>
           </div>
           <div className="experience-year">June 2023 — August 2023</div>
@@ -110,28 +118,24 @@ const HomePage = () => (
       </ul>
     </section>
 
+    {/* Projects Section - Compact Horizontal Card List */}
     <section id="projects" className="projects">
-          <h3>PROJECTS</h3>
-        <div className="project-grid1">
-        <ProjectGridItem
-            title="MindVista Website"
-            description="mindvista.ca: Where It All Comes Together."
-          />
-        </div>
-        <div className="project-grid2">
-          <ProjectGridItem
-            title="ReLease"
-            description="A website for Canadians for lease transfer"
-          />
-        </div>
-        <div className="project-grid3">
-        <ProjectGridItem
-            title="Portfolio Website"
-            description="This website! :)"
-          />
-        </div>
+      <h3>PROJECTS</h3>
+      <div className="project-list">
+        <ProjectCard
+          title="MindVista Website"
+          description="mindvista.ca: Where It All Comes Together."
+        />
+        <ProjectCard
+          title="ReLease"
+          description="A website for Canadians for lease transfer"
+        />
+        <ProjectCard
+          title="Portfolio Website"
+          description="This website! :)"
+        />
+      </div>
     </section>
-
 
     <div className="footer-text">
       <p>2025 - Murad Novruzov</p>
