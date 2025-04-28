@@ -38,7 +38,8 @@ header .logo {
 }
 
 header .logo img {
-  height: 50px;
+  margin-top: 15%;
+  width: 50px; /* Adjust logo size */
   transition: transform 0.3s; /* Add transition for magnifying effect */
 }
 
