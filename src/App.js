@@ -8,16 +8,20 @@ const Projects = lazy(() => import('./components/Projects'));
 
 const App = () => {
   useEffect(() => {
+    // Create the glowing effect element
     const glowElement = document.createElement('div');
     glowElement.classList.add('glow');
     document.body.appendChild(glowElement);
 
+    // Track mouse movement and update glow position, accounting for scroll
     const handleMouseMove = (e) => {
-      glowElement.style.top = `${e.pageY}px`;
-      glowElement.style.left = `${e.pageX}px`;
+      glowElement.style.top = `${e.pageY}px`; // pageY accounts for scrolling
+      glowElement.style.left = `${e.pageX}px`; // pageX accounts for scrolling
     };
+
     document.addEventListener('mousemove', handleMouseMove);
 
+    // Cleanup event listener on component unmount
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);
       document.body.removeChild(glowElement);
