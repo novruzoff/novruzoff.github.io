@@ -1,12 +1,14 @@
 import React from 'react';
 import './Projects.css';
-import projectImage from '../assets/ReLease_Logo.png'; // Ensure the path is correct
+import projectImage from '../assets/ReLease_Logo.png';
 import ReLeasePic1 from '../assets/ReLease_pic1.png';
 import ReLeasePic2 from '../assets/ReLease_pic2.png';
 import ReLeasePic3 from '../assets/ReLease_pic3.png';
 import githubLogo from '../assets/github.png';
 import devpostLogo from '../assets/devpost.png';
-import MNLogo from '../assets/MN_Logo.png'; // Import MN Logo
+import MNLogo from '../assets/MN_Logo.png';
+import MindvistaLogo from '../assets/Mindvista_Logo.png';
+import WebLogo from '../assets/web.png';
 
 const Projects = () => (
   <main>
@@ -60,6 +62,33 @@ const Projects = () => (
           </p>
           <div className="project-links">
             <a href="https://github.com/novruzoff/novruzoff.github.io" target="_blank" rel="noopener noreferrer">
+              <img src={githubLogo} alt="GitHub" className="link-logo" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Mindvista Website Project */}
+      <div className="project">
+        <div className="project-header">
+          <img src={MindvistaLogo} alt="MindVista Website Logo" className="mindvista-logo" />
+        </div>
+        <div className="project-content">
+          <h3>• Mindvista Website (mindvista.ca)</h3>
+          <p>
+            mindvista.ca has been successfully migrated from WordPress to a cutting-edge tech stack featuring Next.js and Payload CMS. This transition significantly enhances our website's performance, responsiveness, SEO, and developer experience. With improved stability, scalability, and maintainability, we can now deliver content more efficiently and introduce new features with greater flexibility.
+          </p>
+          <p>
+            • Front-end Framework: We have adopted Next.js, leveraging its powerful features to enhance website performance and search engine optimization. This shift also improves the developer experience by streamlining the code structure, reducing complexity, and enabling faster iterations and deployments.
+          </p>
+          <p>
+            • Back-end / Content Management: We have replaced WordPress with Payload CMS, a lightweight and highly customizable content management system. Unlike traditional CMS platforms, Payload allows us to build exactly what we need without excess features, improving efficiency and usability.
+          </p>
+          <div className="project-links">
+          <a href="https://mindvista.ca" target="_blank" rel="noopener noreferrer">
+              <img src={WebLogo} alt="Website" className="link-logo" />
+            </a>
+            <a href="https://github.com/MindVista/website" target="_blank" rel="noopener noreferrer">
               <img src={githubLogo} alt="GitHub" className="link-logo" />
             </a>
           </div>
