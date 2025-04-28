@@ -16,8 +16,8 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: 2rem;
   padding-left: 10%; /* Align the project content vertically */
+  margin-bottom: 8rem;
 }
 
 /* Flexbox for logo and title alignment */
