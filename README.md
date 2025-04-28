@@ -27,7 +27,7 @@ I’m constantly improving this project. If you have suggestions or ideas, feel 
 ## 📬 Contact
 
 Feel free to reach out to me for feedback, collaboration, or just to connect:
-- **Email**: [murad.novruzov1899@gmail.com] (mailto:murad.novruzov1899@gmail.com)
+- **Email**: murad.novruzov1899@gmail.com
 - **Portfolio**: [https://novruzoff.github.io/#/](https://novruzoff.github.io/#/)
 - **LinkedIn**: [https://www.linkedin.com/in/novruzovmurad/](https://www.linkedin.com/in/novruzovmurad/)
 
