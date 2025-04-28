@@ -244,60 +244,71 @@ header {
   text-align: left;
 }
 
-/* Projects on Homepage */
-/* New compact horizontal list for projects */
+/* ================================
+   Projects Section (Alternating)
+   ================================ */
+.projects {
+  padding: 4rem 1rem;
+}
+
+.projects > h3 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #f0f0f0;
+}
+
 .project-list {
   display: flex;
-  flex-wrap: nowrap; /* Prevents wrapping to new lines */
-  gap: 1rem;
-  overflow-x: auto; /* Enables horizontal scrolling */
-  padding: 1rem 0;
-  max-width: 85%;
+  flex-direction: column;
+  gap: 3rem;
+  max-width: 800px;
   margin: 0 auto;
-  scroll-snap-type: x mandatory; /* Optional nice snapping behavior */
-  padding-left: 4%;
 }
 
-.projects h3 {
-  font-size: 2.5rem;
-  color: #f0f0f0;
-  padding: 1rem 0 0.5rem;
-  margin-bottom: 1rem;
-  font-family: "Space Mono", monospace;
-  padding-left: 9.3%;
-}
-
-/* Each project "card" */
-.project-card {
-  flex: 0 0 auto; /* Ensures it doesn't shrink */
-  width: 20%; /* Fixed or min-width for each card */
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.project-item {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 8px;
-  padding: 1rem;
-  transition: transform 0.3s ease, border-color 0.3s ease;
-  cursor: pointer;
+  border-left: 4px solid #3f51b5;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.project-card:hover {
+.project-item:hover {
   transform: translateY(-4px);
-  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
-.project-card h3 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #f0f0f0;
-  margin: 0 0 0.5rem 0;
+.project-item:nth-child(even) {
+  flex-direction: row-reverse;
+  border-color: #ff4081;
+}
+
+.project-item img {
+  width: 200px;
+  height: auto;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.project-item .info {
+  flex: 1;
+}
+
+.project-item .info h4 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+  color: #fff;
   font-family: "Space Mono", monospace;
-  text-align: center;
 }
 
-.project-card p {
-  font-size: 0.9rem;
-  color: #808080;
+.project-item .info p {
   margin: 0;
-  line-height: 1.4;
+  color: #c0c0c0;
+  line-height: 1.5;
 }
 
 /* Update responsive styles */
