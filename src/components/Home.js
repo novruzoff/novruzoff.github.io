@@ -1,17 +1,23 @@
 import React from 'react';
 import './Home.css';
-import profileImage from '../assets/homepage-photo.jpg';
 import altImage from '../assets/skimask-photo.png';
-import MNLogo from '../assets/MN_Logo.png';
-import projectsLogo from '../assets/ReLease_Logo2.png';
 import instagramIcon from '../assets/instagram.png';
 import linkedinIcon from '../assets/linkedin.png';
 import mailIcon from '../assets/mail.png';
 import githubIcon from '../assets/github.png';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const Home = () => (
   <section id="home">
+    <Helmet>
+      <title>Home – Murad Novruzov</title>
+      <meta
+        name="description"
+        content="Murad Novruzov’s portfolio: Computer Science student at McGill University building Web and Software apps."
+      />
+      <link rel="canonical" href="https://novruzoff.github.io/" />
+    </Helmet>
     <div className="home-content">
       <h1>Murad</h1>
       <h1>Novruzov</h1>

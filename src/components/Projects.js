@@ -9,9 +9,18 @@ import devpostLogo from '../assets/devpost.png';
 import MNLogo from '../assets/MN_Logo.png';
 import MindvistaLogo from '../assets/Mindvista_Logo.png';
 import WebLogo from '../assets/web.png';
+import { Helmet } from 'react-helmet-async';
 
 const Projects = () => (
   <main>
+    <Helmet>
+      <title>Projects – Murad Novruzov</title>
+      <meta
+        name="description"
+        content="Murad Novruzov’s Projects: ReLease, Portfolio Website, Mindvista Website."
+      />
+      <link rel="canonical" href="https://novruzoff.github.io/projects" />
+    </Helmet>
     <section id="projects">
       <h2>PROJECTS</h2>
 
