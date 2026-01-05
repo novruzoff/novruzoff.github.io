@@ -40,7 +40,7 @@ header .logo {
 }
 
 header .logo img {
-  width: 46px; /* Adjust logo size */
+  width: 60px; /* Adjust logo size */
   transition: transform 0.3s; /* Add transition for magnifying effect */
 }
 
