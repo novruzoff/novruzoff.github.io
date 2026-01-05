@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Home.css';
 import altImage from '../assets/skimask-photo.png';
 import instagramIcon from '../assets/instagram.png';
@@ -7,6 +7,26 @@ import mailIcon from '../assets/mail.png';
 import githubIcon from '../assets/github.png';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+
+const useMontrealTime = () => {
+  const [localTime, setLocalTime] = useState('');
+
+  useEffect(() => {
+    const formatTime = () =>
+      new Intl.DateTimeFormat('en-CA', {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false,
+        timeZone: 'America/Toronto',
+      }).format(new Date());
+
+    setLocalTime(formatTime());
+    const id = setInterval(() => setLocalTime(formatTime()), 30000);
+    return () => clearInterval(id);
+  }, []);
+
+  return localTime;
+};
 
 const HomeHero = () => (
   <section id="home" className="home-grid panel">
@@ -20,7 +40,7 @@ const HomeHero = () => (
     </Helmet>
 
     <div className="hero-meta">
-      <div className="pill">novruzoff</div>
+      <div className="pill hero-pill">novruzoff</div>
       <h1 className="hero-title">
         <span>Murad</span>
         <span>Novruzov</span>
@@ -69,7 +89,7 @@ const HomeHero = () => (
     </div>
 
     <div className="hero-visual">
-      <div className="profile-shell panel">
+      <div className="profile-shell">
         <div className="scanline" />
         <img src={altImage} alt="Profile" className="profile-photo" />
       </div>
@@ -95,6 +115,7 @@ const HomeHero = () => (
         </div>
       </div>
     </div>
+
   </section>
 );
 
@@ -108,18 +129,20 @@ const ProjectCard = ({ title, description }) => {
   return (
     <div className="project-card" onClick={handleClick}>
       <div className="project-card-top">
-        <span className="pill">view</span>
+        <h3>{title}</h3>
         <span className="arrow">↗</span>
       </div>
-      <h3>{title}</h3>
       <p>{description}</p>
     </div>
   );
 };
 
-const HomePage = () => (
-  <div className="page-shell home-page">
-    <HomeHero />
+const HomePage = () => {
+  const localTime = useMontrealTime();
+
+  return (
+    <div className="page-shell home-page">
+      <HomeHero />
 
     <section id="about-me" className="about-section panel">
       <div className="section-header">
@@ -138,19 +161,10 @@ const HomePage = () => (
             and striving to expand my skill set to deliver impactful, forward-thinking solutions.
           </p>
         </div>
-        <div className="about-meta">
-          <div className="stat">
-            <span className="label">Location</span>
-            <strong> Montreal · Remote-friendly</strong>
-          </div>
-          <div className="stat">
-            <span className="label">Status</span>
-            <strong> Open to internships</strong>
-          </div>
-          <div className="stat">
-            <span className="label">Timezone</span>
-            <strong> EST (UTC-5/UTC-4)</strong>
-          </div>
+        <div className="about-facts">
+          <span className="fact-pill">Remote-friendly</span>
+          <span className="fact-pill">Open to internships</span>
+          <span className="fact-pill">Montreal time: {localTime || '...'}</span>
         </div>
       </div>
     </section>
@@ -223,7 +237,7 @@ const HomePage = () => (
       <div className="skills-grid">
         <div className="skills-card">
           <strong className="label">Languages</strong>
-          <p>Python, Java, TypeScript/JavaScript, C, HTML/CSS, Bash</p>
+          <p>Python, Java, C, JavaScript, TypeScript, Swift, HTML/CSS, Bash, Assembly</p>
         </div>
         <div className="skills-card">
           <strong className="label">Software</strong>
@@ -253,10 +267,11 @@ const HomePage = () => (
       </div>
     </section>
 
-    <div className="footer-text">
-      <p>2026 - Murad Novruzov</p>
+      <div className="footer-text">
+        <p>2026 - Murad Novruzov</p>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default HomePage;

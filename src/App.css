@@ -35,7 +35,7 @@ body {
 }
 
 .App {
-  text-align: center;
+  text-align: left;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -54,16 +54,32 @@ body {
 
 .App::before {
   background:
-    linear-gradient(var(--grid) 1px, transparent 1px) 0 0 / 80px 80px,
-    linear-gradient(90deg, var(--grid) 1px, transparent 1px) 0 0 / 80px 80px;
-  opacity: 0.35;
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px) 0 0 / 120px 120px,
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px) 0 0 / 120px 120px;
+  opacity: 0.22;
+  animation: gridShift 16s linear infinite;
 }
 
 .App::after {
-  background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.04), transparent 35%),
-    radial-gradient(circle at 80% 0%, rgba(74, 222, 128, 0.05), transparent 30%),
-    radial-gradient(circle at 70% 60%, rgba(34, 211, 238, 0.05), transparent 35%);
+  background:
+    radial-gradient(circle, rgba(255, 255, 255, 0.14) 1.5px, transparent 1.5px) 0 0 / 180px 180px,
+    radial-gradient(circle, rgba(255, 255, 255, 0.12) 1px, transparent 1px) 60px 40px / 140px 140px,
+    radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px) 120px 20px / 200px 200px;
   mix-blend-mode: screen;
+  opacity: 0.28;
+  animation: dotsDrift 20s linear infinite;
+}
+
+@keyframes gridShift {
+  to {
+    background-position: 150px 130px, 130px 150px;
+  }
+}
+
+@keyframes dotsDrift {
+  to {
+    background-position: 40px 220px, -30px 180px, 20px 260px;
+  }
 }
 
 /* Glowing cursor follower */
