@@ -4,15 +4,17 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background: inherit; /* Ensure it inherits the background */
+  padding: 0.85rem 2rem;
+  background: rgba(5, 6, 8, 0.72);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
   position: fixed;
-  width: 100%; /* Ensure it takes up the full width */
+  width: 100%;
   top: 0;
-  z-index: 10;
-  box-sizing: border-box; /* Include padding in width calculations */
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-  transition: transform 0.3s ease-in-out; /* Add transition for smooth hiding/showing */
+  z-index: 20;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  transition: transform 0.3s ease-in-out, border-color 0.3s ease;
 }
 
 html,
@@ -38,8 +40,7 @@ header .logo {
 }
 
 header .logo img {
-  margin-top: 15%;
-  width: 50px; /* Adjust logo size */
+  width: 46px; /* Adjust logo size */
   transition: transform 0.3s; /* Add transition for magnifying effect */
 }
 
@@ -56,21 +57,22 @@ header nav {
 header nav a {
   color: #ffffff;
   text-decoration: none;
-  font-weight: 700;
-  padding: 0.5rem 1rem;
+  font-weight: 600;
+  padding: 0.45rem 1rem;
   border-radius: 7px;
-  transition: background-color 0.3s ease, transform 0.3s; /* Add transition for magnifying effect */
+  border: 1px solid transparent;
+  transition: background-color 0.3s ease, transform 0.3s, border-color 0.3s ease; /* Add transition for magnifying effect */
   white-space: nowrap; /* Prevent text wrapping */
 }
 
 header nav a:hover {
-  transform: scale(1.2); /* Magnify on hover */
-  text-decoration: none;
+  transform: translateY(-2px); /* Magnify on hover */
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 header nav a.active {
-  color: #ffffff; /* Highlight color for the active link */
-  text-decoration: underline; /* Underline the active link */
+  color: var(--accent); /* Highlight color for the active link */
+  border-color: rgba(74, 222, 128, 0.4);
 }
 
 header nav a:not(.active) {

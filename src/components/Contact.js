@@ -8,8 +8,8 @@ const Contact = () => (
       <p>Get in touch with me through the following channels:</p>
       <ul>
         <li>Email: murad.novruzov1899@gmail.com</li>
-        <li>LinkedIn: linkedin.com/novruzovmurad</li>
-        <li>GitHub: github.com/novruzoff</li>
+        <li>LinkedIn: https://www.linkedin.com/in/novruzovmurad/</li>
+        <li>GitHub: https://github.com/novruzoff</li>
       </ul>
       <p>Here you can add a contact form or more detailed information about how people can reach you.</p>
     </section>
